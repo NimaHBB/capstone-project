@@ -1,6 +1,9 @@
 .App {
   text-align: center;
-}
+  width: 100vw;
+  max-width: 900px;
+  margin: auto;
+  ;}
 
 .App-logo {
   height: 40vmin;
@@ -35,4 +38,29 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.categoryContainer{
+display:flex;
+direction:row;
+justify-content:flex-start;
+background:whitesmoke;
+width: 95%;
+margin: 0 auto;
+}
+.categoryContainer article{
+  display: flex;
+  justify-content: space-around;
+  width: 130px;
+  background: #61dafb;
+  cursor:pointer;
+  padding: 0 10px;
+}
+
+.categoryContainer article img{
+  width: 60px;
+  margin: 5px auto;
+  background: rgb(255, 255, 255,80%);
+  border-radius: 15px;
+
 }
