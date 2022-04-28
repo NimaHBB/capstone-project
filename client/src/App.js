@@ -4,8 +4,8 @@ import CreateCategoryCard from './components/functions/cerateCategoryCard';
 
 function App() {
 
-  function ShowCategoryDetails(){
-    alert('clicked')
+  function ShowCategoryDetails(catName){
+    alert(catName+' category clicked')
   }
   
   const [categories, setCategories] = useState([]);
@@ -20,7 +20,7 @@ function App() {
     console.clear(),
     console.log(categories),
     <div className='App'>
-      <h4>Ctegories</h4>
+      <h2>Nitto Shop</h2>
       <div className='categoryContainer'>
         {categories.map((category,index)=>
         <CreateCategoryCard key={index} doClick={ShowCategoryDetails} catObject={category}/>

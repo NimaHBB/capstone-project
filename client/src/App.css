@@ -44,26 +44,34 @@
 display:flex;
 direction:row;
 justify-content:flex-start;
+flex-wrap: wrap;
 background:whitesmoke;
-width: 95%;
+width: 99%;
 margin: 0 auto;
 }
 .categoryContainer article{
   display: flex;
   justify-content: space-around;
-  width: 130px;
+  width: 33%;
+  max-width: 150px;
   background: #61dafb;
   cursor:pointer;
-  padding: 0 10px;
+  padding: 0 auto;
   color: rgb(255, 255, 255);
-  font-weight: 900;
+  font-weight: 700;
+}
+.categoryContainer article p{
+  margin: auto;
+  text-shadow: #000000 0.7px 0.6px 0.5px;
   
 }
-
 .categoryContainer article img{
-  width: 60px;
+  width: 40%;
   margin: 5px auto;
-  background: rgb(255, 255, 255,80%);
+  background: rgb(255, 255, 255,35%);
   border-radius: 15px;
-
+}
+h2{
+  color: rgb(247, 37, 142);
+  text-shadow: #7f7f7f 0.7px 0.6px 0.5px;
 }
