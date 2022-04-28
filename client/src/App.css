@@ -55,6 +55,9 @@ margin: 0 auto;
   background: #61dafb;
   cursor:pointer;
   padding: 0 10px;
+  color: rgb(255, 255, 255);
+  font-weight: 900;
+  
 }
 
 .categoryContainer article img{

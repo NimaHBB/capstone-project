@@ -1,34 +1,30 @@
-//import { useState } from 'react';
+import {useEffect, useState } from 'react';
 import './App.css';
 import CreateCategoryCard from './components/functions/cerateCategoryCard';
 
-
 function App() {
+
   function ShowCategoryDetails(){
     alert('clicked')
   }
   
-  //sconst [users, setUsers] = useState([]);
-  /*function fetchSomething() {
+  const [categories, setCategories] = useState([]);
+  useEffect(()=> {
     fetch('/api')
       .then(res => res.json())
-      .then(data => setUsers(data));
-  }*/
-
+      .then(data => setCategories(data));
+      },[])
+      
+    
   return (
-
+    console.clear(),
+    console.log(categories),
     <div className='App'>
       <h4>Ctegories</h4>
-      {/*<button onClick={fetchSomething}>Fetch Data</button>
-      <ul>
-        {users.map(user => (
-          <li key={user.id}>{user.name}</li>
-        ))}
-      </ul>*/}
       <div className='categoryContainer'>
-      <CreateCategoryCard doClick={ShowCategoryDetails} bgColor={'#56E35B'}/>
-      <CreateCategoryCard doClick={ShowCategoryDetails} bgColor={'#E356CD'}/>
-
+        {categories.map((category,index)=>
+        <CreateCategoryCard key={index} doClick={ShowCategoryDetails} catObject={category}/>
+        )}
       </div>
     </div>
   );

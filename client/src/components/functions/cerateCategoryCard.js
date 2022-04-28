@@ -1,15 +1,12 @@
 
-const CreateCategoryCard=({doClick,bgColor})=>{
+const CreateCategoryCard=({doClick,catObject})=>{
 
     return(
-        <article onClick={doClick} style={{background:bgColor}}>
-            <img src={require("../../images/sofa.png")} alt="Sofa"/>
-            <p>Möbel</p>
+        <article onClick={doClick} style={{background:catObject.bgColor}}>
+            <img src={catObject.imageUrl} alt="Sofa"/>
+            <p>{catObject.catName}</p>
         </article>
-        
-
     )
-
 }
 
 export default CreateCategoryCard;
