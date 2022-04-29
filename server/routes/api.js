@@ -2,6 +2,7 @@ import express from 'express';
 const router = express.Router();
 import mongoose from "mongoose";
 import 'dotenv/config';
+import os from 'os';
 
 const categorySchema = mongoose.Schema({
   catName: { type: String, required: true },
@@ -10,15 +11,17 @@ const categorySchema = mongoose.Schema({
 });
 const Product_Categories = mongoose.model("product_categories", categorySchema);
 const {MONGODB_URL_Categories}=process.env
-mongoose.connect(MONGODB_URL_Categories).then(() => {
-  console.log("connected to Database");
-});
+  mongoose.connect(MONGODB_URL_Categories).then(() => {
+    console.log("connected to Database");
+  });
+
+
 
 
 router.get('/', (req, res, next) => {
+
   Product_Categories.find({}).then((data)=>{
     res.status(200).json(data)
-    console.log(data)
   });
 });
 router.get('/api', (req, res, next) => {
