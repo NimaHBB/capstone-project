@@ -3,7 +3,7 @@ import Input from "../css/searchBarInput";
 const SearchInput=()=>{
   return(
     <div>
-    <Input type='search' placeholder='search here...'/>
+    <Input id="search" type='search' placeholder='search here...'/>
     </div>
   )
 };

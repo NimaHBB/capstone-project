@@ -22,9 +22,9 @@ function App() {
       <div className='App-header'>
       <h4>Nitto Shop</h4>
       <form onSubmit={''}>
-  <input type="search" className='search' placeholder='search here...' autofocus required>
+  <input type="text" className='search' placeholder='search here...' autofocus required>
   </input>
-  <button>Go</button>
+  <button id='searchBtn'>Go</button>
 
 </form>
       </div>
@@ -37,10 +37,10 @@ function App() {
       </main>
       <footer>
         <ul>
-         <li ><a href=''><img src='https://raw.githubusercontent.com/NimaHBB/capstone-project/main/client/src/images/icon/home.svg' /></a></li>
-         <li ><a href=''><img src='https://raw.githubusercontent.com/NimaHBB/capstone-project/main/client/src/images/icon/person.svg' /></a></li>
-         <li ><a href=''><img src='https://raw.githubusercontent.com/NimaHBB/capstone-project/main/client/src/images/icon/favorite.svg' /></a></li>
-         <li ><a href=''><img src='https://raw.githubusercontent.com/NimaHBB/capstone-project/main/client/src/images/icon/menu.svg' /></a></li>
+         <li ><a href='localcost:3000'><img src='https://raw.githubusercontent.com/NimaHBB/capstone-project/main/client/src/images/icon/home.svg' alt='home icon'/></a></li>
+         <li ><a href='localcost:3000'><img src='https://raw.githubusercontent.com/NimaHBB/capstone-project/main/client/src/images/icon/person.svg' alt='person icon'/></a></li>
+         <li ><a href='localcost:3000'><img src='https://raw.githubusercontent.com/NimaHBB/capstone-project/main/client/src/images/icon/favorite.svg' alt='favorite icon'/></a></li>
+         <li ><a href='localcost:3000'><img src='https://raw.githubusercontent.com/NimaHBB/capstone-project/main/client/src/images/icon/menu.svg' alt='menu icon'/></a></li>
         </ul>
       </footer>
 

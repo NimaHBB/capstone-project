@@ -16,8 +16,6 @@ const {MONGODB_URL_Categories}=process.env
   });
 
 
-
-
 router.get('/', (req, res, next) => {
 
   Product_Categories.find({}).then((data)=>{
