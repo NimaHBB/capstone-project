@@ -24,7 +24,7 @@ function App() {
       <form onSubmit={''}>
   <input type="search" className='search' placeholder='search here...' autofocus required>
   </input>
-  <img src='https://raw.githubusercontent.com/NimaHBB/capstone-project/main/client/src/images/icon/search.svg' alt='search icon'/>
+  <button>Go</button>
 
 </form>
       </div>
@@ -35,7 +35,14 @@ function App() {
         )}
       </div>
       </main>
-      <footer>Copyright 2022</footer>
+      <footer>
+        <ul>
+         <li ><a href=''><img src='https://raw.githubusercontent.com/NimaHBB/capstone-project/main/client/src/images/icon/home.svg' /></a></li>
+         <li ><a href=''><img src='https://raw.githubusercontent.com/NimaHBB/capstone-project/main/client/src/images/icon/person.svg' /></a></li>
+         <li ><a href=''><img src='https://raw.githubusercontent.com/NimaHBB/capstone-project/main/client/src/images/icon/favorite.svg' /></a></li>
+         <li ><a href=''><img src='https://raw.githubusercontent.com/NimaHBB/capstone-project/main/client/src/images/icon/menu.svg' /></a></li>
+        </ul>
+      </footer>
 
     </div>
 );
