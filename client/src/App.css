@@ -124,10 +124,20 @@ footer{
   align-items: center;
   justify-content: center;
   /*font-size: calc(10px + 2vmin);*/
-  height: 8vh;
+  height: 4vh;
   color: #063773;
 }
 footer ul{
+  background: #FFF;
+  width: 100%;
   list-style: none;
-  
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 60px;
+  padding: 0 ;
 }
+footer ul img{
+  width: 2rem;
+}
+
