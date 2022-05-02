@@ -1,12 +1,11 @@
-
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const Input = styled.input`
   font-size: 14px;
   line-height: 1;
   background-color: transparent;
   width: 80%;
-  height:50px;
+  height: 50px;
   margin-left: "1rem";
   border: none;
   color: white;
@@ -16,4 +15,4 @@ const Input = styled.input`
     color: white;
   }
 `;
-export default Input
+export default Input;

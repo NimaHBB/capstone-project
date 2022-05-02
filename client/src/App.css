@@ -1,9 +1,9 @@
 .App {
-  text-align: center;
   width: 100vw;
   max-width: 900px;
   margin: auto;
-  ;}
+  background: rgba(239, 239, 239, 0.7);
+}
 
 .App-logo {
   pointer-events: none;
@@ -22,53 +22,62 @@
   justify-content: center;
   /*font-size: calc(10px + 2vmin);*/
   background-color: #063773;
+  text-align: center;
+  color: #063773;
 }
-form{
+form {
   position: relative;
-  border: white 1px solid;
-  height: 2rem;
-  border-radius: 35px;
-  margin: 5px auto 10px auto;
-}
-
-#searchBtn{
-  display: none;
-  }
-.search:not(:placeholder-shown:empty) + #searchBtn{
-display: block;
-position: absolute;
-right: 27px;
-height: 100%;
-border:none;
-border-radius: 50px;
-background: #0ac75c;
-color: rgb(13, 12, 72);
-font-weight: 700;
-}
-
-
-.search{
-  padding-right: 25px;
+  border: rgb(244, 244, 244, 0.5) 0.5px solid;
+  width: 50%;
   border-radius: 50px;
-  height: 100%;
-  width: 100%;
-  outline: none;
-  background: transparent;
-  font-size: 14px;
-  line-height: 1;
-  border: none ;
-  flex-grow:2;
-  color: rgb(218, 218, 218);
+  margin: 5px auto 10px auto;
+  transition: width 0.2s linear 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  padding: 0 60px 0 5px;
+}
 
+#searchBtn {
+  display: block;
+  right: -0.2px;
+  width: 1px;
+  height: 0.1px;
+  background-color: transparent;
+  border: none;
+  border-radius: 50px;
+  transition: background-color 0.4s linear 0.08s;
+  color: transparent;
 }
-.search:focus{
-  max-width: 400px;
-  width: 70vw;
-  transition: 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
+
+.search {
+  padding: auto;
+  border-radius: 50px;
+  height: 1.5rem;
+  width: 100%;
+  outline: 0;
+  background: transparent;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1;
+  border: none;
+  flex-grow: 2;
+  color: rgb(218, 218, 218);
 }
-.search:focus + form{
-  width: 70vw;
+
+.search:not(:placeholder-shown:empty) + button#searchBtn {
+  position: absolute;
+  right: 0.05px;
+  top: 0.5px;
+  height: 95%;
+  border: none;
+  color: rgb(255, 255, 255);
+  width: 30px;
+  font-size: 1rem;
+  background: #14a051;
 }
+
+.search:focus {
+  width: 100%;
+}
+
 .search::placeholder {
   color: rgba(255, 255, 255, 0.5);
 }
@@ -84,47 +93,111 @@ font-weight: 700;
     transform: rotate(360deg);
   }
 }
-main{
+main {
   min-height: 85vh;
 }
-.categoryContainer{
-display:flex;
-direction:row;
-justify-content:center;
-flex-wrap: wrap;
-width: 100%;
-margin: 0 auto;
-
+.productsContainer {
+  display: flex;
+  direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background: transparent;
+  width: 100%;
+  gap: 15px;
 }
-.categoryContainer article{
+
+.card {
+  position: relative;
+  padding: 5px;
+  width: 42%;
+  height: 240px;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: rgb(207, 207, 207, 50%) 2px 2px 5px;
+}
+.Favorite {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 30px;
+  height: 30px;
+}
+h3 {
+  text-align: center;
+}
+
+.products {
   display: flex;
   justify-content: center;
-  width: 33.333%;
+  flex-direction: column;
+  height: 100%;
+  padding: 1px 10px;
+  background: #fff;
+  font-size: smaller;
+}
+
+.product_detail {
+  margin: 10px 0;
+}
+
+.imageContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 60%;
+}
+
+.ProductImage {
+  max-width: 130px;
+  max-height: 130px;
+}
+.product_detail p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.Price {
+  color: green;
+}
+
+.categoryContainer {
+  display: flex;
+  direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 90%;
+  margin: 0 auto;
+  gap: 15px;
+}
+.categoryContainer article {
+  display: flex;
+  justify-content: center;
+  width: 45%;
   max-width: 150px;
-  cursor:pointer;
+  cursor: pointer;
   padding: 0 auto;
   color: rgb(49, 49, 49);
   font-weight: 700;
 }
-.categoryContainer article p{
+.categoryContainer article p {
   margin: auto;
-  
+  font-size: 1rem;
 }
-.categoryContainer article img{
-  width: 40%;
+.categoryContainer article img {
+  width: 30%;
   margin: 5px auto;
-  background: rgb(255, 255, 255,35%);
+  background: rgb(255, 255, 255, 35%);
   border-radius: 15px;
 }
-h4{
+h4 {
   color: rgb(255, 255, 255);
   text-shadow: #7f7f7f 0.7px 0.6px 0.5px;
   margin: 0;
   padding: 5px 0;
 }
 
-footer{
-  
+footer {
   position: sticky;
   bottom: 0;
   display: flex;
@@ -135,17 +208,19 @@ footer{
   height: 4vh;
   color: #063773;
 }
-footer ul{
-  background: #FFF;
+footer ul {
+  background: #fff;
   width: 100%;
   list-style: none;
   display: flex;
   flex-direction: row;
   justify-content: center;
   gap: 60px;
-  padding: 0 ;
+  padding: 0;
 }
-footer ul img{
+footer ul img {
   width: 2rem;
 }
-
+.Home {
+  border-bottom: 10px #063773 solid;
+}

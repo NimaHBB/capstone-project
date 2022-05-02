@@ -4,6 +4,7 @@
   "description": "",
   "type": "module",
   "scripts": {
+    "test": "prettier-check --single-quote --trailing-comma es5 src/**/*.js",
     "server": "cd server && npm start",
     "client": "cd client && npm start",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
@@ -18,5 +19,13 @@
     "dotenv": "^16.0.0",
     "mongoose": "^6.3.1",
     "styled-components": "^5.3.5"
+  },
+  "devDependencies": {
+    "prettier": "2.6.2",
+    "prettier-check": "^2.0.0"
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
 }
