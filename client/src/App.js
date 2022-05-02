@@ -56,6 +56,10 @@ function App() {
           ></input>
           <button id="searchBtn">&#10132;</button>
         </form>
+        <img className="basketMenue" 
+        src="https://raw.githubusercontent.com/NimaHBB/capstone-project/main/client/src/images/icon/basket2.svg"
+        alt="Shopping Bag Icon"
+        ></img>
       </div>
       <main>
         <h3>Die besten Angebote</h3>
