@@ -14,7 +14,7 @@ const CreateProductsCard = ({ ProductObject }) => {
         </div>
         <img
           className="Favorite"
-          src="https://raw.githubusercontent.com/NimaHBB/capstone-project/main/client/src/images/icon/star.svg"
+          src="https://raw.githubusercontent.com/NimaHBB/capstone-project/main/client/src/images/icon/favorite.svg"
           alt="Favorite Icon"
         ></img>
         <div className="product_detail">

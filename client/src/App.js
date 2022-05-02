@@ -100,7 +100,7 @@ function App() {
           <li>
             <a href="localcost:3000">
               <img
-                src="https://raw.githubusercontent.com/NimaHBB/capstone-project/main/client/src/images/icon/favorite.svg"
+                src="https://raw.githubusercontent.com/NimaHBB/capstone-project/main/client/src/images/icon/favorite_menue.svg"
                 alt="favorite icon"
               />
             </a>

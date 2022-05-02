@@ -119,10 +119,11 @@ main {
 }
 .Favorite {
   position: absolute;
-  right: 0;
-  top: 0;
-  width: 30px;
-  height: 30px;
+  right: 5px;
+  bottom: 55px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
 }
 h3 {
   text-align: center;
