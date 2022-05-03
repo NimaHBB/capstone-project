@@ -1,7 +1,6 @@
 import React from "react";
 
-const CreateProductsCard = ({ ProductObject }) => {
-  console.log(ProductObject);
+const CreateProductsCard = ({ ProductObject, imagesPath }) => {
   return (
     <div className="card">
       <div className="products">
@@ -14,13 +13,13 @@ const CreateProductsCard = ({ ProductObject }) => {
         </div>
         <img
           className="Favorite"
-          src="https://raw.githubusercontent.com/NimaHBB/capstone-project/main/client/src/images/icon/favorite-black.svg"
+          src={imagesPath+"icon/favorite-black.svg"}
           alt="Favorite Icon"
         ></img>
         <div className="product_detail">
           <p className="Price">{ProductObject.price + " €"}</p>
           <p>{ProductObject.mark}</p>
-          <p>{ProductObject.title.substring(0, 15) + "..."}</p>
+          <p>{ProductObject.title.substring(0, 25) + "..."}</p>
         </div>
       </div>
     </div>
