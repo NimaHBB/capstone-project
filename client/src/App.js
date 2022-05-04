@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import CreateCategoryCard from "./components/functions/cerateCategoryCard";
 import CreateProductsCard from "./components/functions/createProductsCard";
+import CreateProductDetailPage from "./components/functions/createProductsCard";
 
 const imagesPath="https://nimahabibi.de/shop/image/"
 
@@ -27,9 +28,12 @@ function App() {
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);
-
       });
   }, []);
+
+  const showProductDetailPage=()=>{
+    document.getElementById('main').innerHTML=''
+  }
 
   return (
     <div className="App">
@@ -50,13 +54,13 @@ function App() {
         alt="Shopping Bag Icon"
         ></img>
       </div>
-      <main>
+      <main id="main">
         <h3>Die besten Angebote</h3>
         <div className="productsContainer">
           {products.map((product, index) => (
             <CreateProductsCard
               key={index}
-              doClick={() => alert("product")}
+              doClick={showProductDetailPage}
               ProductObject={product}
               imagesPath={imagesPath}
             />

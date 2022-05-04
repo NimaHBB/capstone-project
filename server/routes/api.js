@@ -31,7 +31,6 @@ router.get("/", (req, res, next) => {
 router.get("/products", (req, res, next) => {
   Products.find({}).then((products_data) => {
     res.status(200).json(products_data);
-    console.log(products_data);
   });
 });
 

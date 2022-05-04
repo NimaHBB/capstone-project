@@ -11,7 +11,7 @@
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+    animation: App-logo-spin infinite 0.5s linear;
   }
 }
 
@@ -25,20 +25,20 @@
   background-color: #063773;
   text-align: center;
   color: #063773;
+  padding-top: 5px;
 }
 .basketMenue{
 position: absolute;
-right: 15px;
+right: 10px;
 top: 10px;
-width: 33px;
-height: 33px;
-
+width: 20px;
+height: 25px;
+cursor: pointer;
 }
 form {
   position: relative;
   border: rgb(244, 244, 244, 0.5) 0.5px solid;
-  width: 50%;
-  border-radius: 50px;
+  width: 55%;
   margin: 5px auto 10px auto;
   transition: width 0.2s linear 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
   padding: 0 60px 0 5px;
@@ -47,13 +47,26 @@ form {
 #searchBtn {
   display: block;
   right: -0.2px;
-  width: 1px;
+  width: 0.1px;
   height: 0.1px;
   background-color: transparent;
   border: none;
-  border-radius: 50px;
-  transition: background-color 0.4s linear 0.08s;
+  transition: width 0.4s linear 0.08s;
   color: transparent;
+}
+.search:not(:placeholder-shown:empty) + #searchBtn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  border:none;
+  color: rgb(255, 255, 255);
+  width: 30px;
+  font-size: 1rem;
+  background: #14a051;
+  justify-content: center;
+  text-align: center;
+  padding: 0 ;
 }
 
 .search {
@@ -70,19 +83,6 @@ form {
   flex-grow: 2;
   color: rgb(218, 218, 218);
 }
-
-.search:not(:placeholder-shown:empty) + button#searchBtn {
-  position: absolute;
-  right: 0.05px;
-  top: 0.5px;
-  height: 95%;
-  border: none;
-  color: rgb(255, 255, 255);
-  width: 30px;
-  font-size: 1rem;
-  background: #14a051;
-}
-
 .search:focus {
   width: 100%;
 }
@@ -124,14 +124,22 @@ main {
   height: 200px;
   background: #fff;
   border-radius: 5px;
+  border: none;
   box-shadow: rgb(207, 207, 207, 50%) 2px 2px 5px;
+}
+.card:hover{
+  box-shadow: rgb(207, 207, 207, 74%) 0 2px 5px 4px;
+  cursor: pointer;
 }
 .Favorite {
   position: absolute;
   right: 15px;
-  bottom: 35px;
-  width: 25px;
-  height: 25px;
+  bottom: 49px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+.Favorite{
   cursor: pointer;
 }
 h3 {
@@ -150,14 +158,13 @@ h3 {
 
 .product_detail {
   margin: 10px 0 5px 0;
-  
 }
 
 .imageContainer {
   margin: auto;
   display: flex;
   justify-content: center;
-  width: 100%;
+  width: 90%;
   height: 60%;
 }
 
@@ -236,5 +243,5 @@ footer ul img {
   width: 2rem;
 }
 .Home {
-  border-bottom: 10px #063773 solid;
+  border-bottom: 5px #063773 solid;
 }

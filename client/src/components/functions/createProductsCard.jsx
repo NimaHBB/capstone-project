@@ -1,8 +1,8 @@
 import React from "react";
 
-const CreateProductsCard = ({ ProductObject, imagesPath }) => {
+const CreateProductsCard = ({ ProductObject, imagesPath,doClick }) => {
   return (
-    <div className="card">
+    <div className="card" onClick={doClick}>
       <div className="products">
         <div className="imageContainer">
           <img
