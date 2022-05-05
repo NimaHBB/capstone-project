@@ -1,121 +1,31 @@
-import { useEffect, useState } from "react";
+import {Routes,Route } from "react-router-dom";
+import react from "react";
 import "./App.css";
-import CreateCategoryCard from "./components/functions/cerateCategoryCard";
-import CreateProductsCard from "./components/functions/createProductsCard";
-import CreateProductDetailPage from "./components/functions/createProductsCard";
+import Footer from "./components/functions/footer";
+import Home from "./Pages/Home";
+import ProductsDetails from "./Pages/productsDetail";
+import Header from "./components/functions/header";
 
-const imagesPath="https://nimahabibi.de/shop/image/"
 
+const imagesPath="https://nimahabibi.de/shop/image/";
 function App() {
   console.clear();
-  function ShowCategoryDetails(catName) {
-    alert(catName + " category clicked");
-  }
-
-  const [categories, setCategories] = useState([]);
-  const [products, setProducts] = useState([]);
-
-  useEffect(() => {
-    fetch("/api")
-      .then((res) => res.json())
-      .then((data) => {
-        setCategories(data);
-      });
-  }, []);
-
-  useEffect(() => {
-    fetch("/api/products")
-      .then((res) => res.json())
-      .then((data) => {
-        setProducts(data);
-      });
-  }, []);
-
-  const showProductDetailPage=()=>{
-    document.getElementById('main').innerHTML=''
-  }
 
   return (
     <div className="App">
-      <div className="App-header">
-        <h4>Nitto Shop</h4>
-        <form onSubmit={""}>
-          <input
-            type="text"
-            className="search"
-            placeholder="search here..."
-            autofocus
-            required
-          ></input>
-          <button id="searchBtn">&#10132;</button>
-        </form>
-        <img className="basketMenue" 
-        src={imagesPath+"icon/basket2.svg"}
-        alt="Shopping Bag Icon"
-        ></img>
-      </div>
+     
+<Header />
       <main id="main">
-        <h3>Die besten Angebote</h3>
-        <div className="productsContainer">
-          {products.map((product, index) => (
-            <CreateProductsCard
-              key={index}
-              doClick={showProductDetailPage}
-              ProductObject={product}
-              imagesPath={imagesPath}
-            />
-          ))}
-        </div>
-        <h3>Sortiment</h3>
-        <div className="categoryContainer">
-          {categories.map((category, index) => (
-            <CreateCategoryCard
-              key={index}
-              doClick={ShowCategoryDetails}
-              catObject={category}
-              imagesPath={imagesPath}
-            />
-          ))}
-        </div>
+        <Routes>
+          <Route path="/" element={ <Home />} />
+        </Routes>
+        <Routes>
+          <Route path="product-detail" element={ <ProductsDetails />} />
+        </Routes>
       </main>
-      <footer>
-        <ul>
-          <li className="Home">
-            <a href="localcost:3000">
-              <img
-                src={imagesPath+"icon/home.svg"}
-                alt="home icon"
-              />
-            </a>
-          </li>
-          <li>
-            <a href="localcost:3000">
-              <img
-                src={imagesPath+"icon/person.svg"}
-                alt="person icon"
-              />
-            </a>
-          </li>
-          <li>
-            <a href="localcost:3000">
-              <img
-                src={imagesPath+"icon/favorite_menue.svg"}
-                alt="favorite icon"
-              />
-            </a>
-          </li>
-          <li>
-            <a href="localcost:3000">
-              <img
-                src={imagesPath+"icon/menu.svg"}
-                alt="menu icon"
-              />
-            </a>
-          </li>
-        </ul>
-      </footer>
+        <Footer className="footer"/>
     </div>
-  );
+      );
 }
 
 export default App;
