@@ -31,8 +31,8 @@ function App() {
 
       <main id="main">
         <Routes>
-          <Route path="/" element={ <Home />}>
-          </Route>
+          <Route path="/" element={ <Home />} />
+          
         </Routes>
       </main>
       <footer>
