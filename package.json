@@ -15,6 +15,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@apideck/better-ajv-errors": "^0.3.3",
     "concurrently": "^7.1.0",
     "dotenv": "^16.0.0",
     "mongoose": "^6.3.1",
