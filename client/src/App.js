@@ -1,39 +1,13 @@
-import { useEffect, useState } from "react";
+import {Routes,Route } from "react-router-dom";
+import react from "react";
 import "./App.css";
-import CreateCategoryCard from "./components/functions/cerateCategoryCard";
-import CreateProductsCard from "./components/functions/createProductsCard";
-import CreateProductDetailPage from "./components/functions/createProductsCard";
-
+import Home from "./Pages/Home";
 const imagesPath="https://nimahabibi.de/shop/image/"
+
+
 
 function App() {
   console.clear();
-  function ShowCategoryDetails(catName) {
-    alert(catName + " category clicked");
-  }
-
-  const [categories, setCategories] = useState([]);
-  const [products, setProducts] = useState([]);
-
-  useEffect(() => {
-    fetch("/api")
-      .then((res) => res.json())
-      .then((data) => {
-        setCategories(data);
-      });
-  }, []);
-
-  useEffect(() => {
-    fetch("/api/products")
-      .then((res) => res.json())
-      .then((data) => {
-        setProducts(data);
-      });
-  }, []);
-
-  const showProductDetailPage=()=>{
-    document.getElementById('main').innerHTML=''
-  }
 
   return (
     <div className="App">
@@ -54,29 +28,12 @@ function App() {
         alt="Shopping Bag Icon"
         ></img>
       </div>
+
       <main id="main">
-        <h3>Die besten Angebote</h3>
-        <div className="productsContainer">
-          {products.map((product, index) => (
-            <CreateProductsCard
-              key={index}
-              doClick={showProductDetailPage}
-              ProductObject={product}
-              imagesPath={imagesPath}
-            />
-          ))}
-        </div>
-        <h3>Sortiment</h3>
-        <div className="categoryContainer">
-          {categories.map((category, index) => (
-            <CreateCategoryCard
-              key={index}
-              doClick={ShowCategoryDetails}
-              catObject={category}
-              imagesPath={imagesPath}
-            />
-          ))}
-        </div>
+        <Routes>
+          <Route path="/" element={ <Home />}>
+          </Route>
+        </Routes>
       </main>
       <footer>
         <ul>
@@ -115,7 +72,7 @@ function App() {
         </ul>
       </footer>
     </div>
-  );
+      );
 }
 
 export default App;
