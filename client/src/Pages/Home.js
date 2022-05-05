@@ -29,11 +29,12 @@ function ShowCategoryDetails(catName) {
 
 
   const showProductDetailPage=()=>{
-    document.getElementById('main').innerHTML=''
+    //document.getElementById('main').innerHTML=''
   }
 
 
     return(
+
 <div>
 <h3>Die besten Angebote</h3>
         <div className="productsContainer">
