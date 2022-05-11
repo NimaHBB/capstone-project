@@ -1,9 +1,10 @@
-const imagesPath="https://nimahabibi.de/shop/image/";
-const Header=()=>{
-  
-    return(
-        <>
-         <div className="App-header">
+import UserSignOut from "./userSignOut";
+
+const imagesPath = "https://nimahabibi.de/shop/image/";
+const Header = () => {
+  return (
+    <>
+      <div className="App-header">
         <h4>Nitto Shop</h4>
         <form onSubmit={""}>
           <input
@@ -15,13 +16,20 @@ const Header=()=>{
           ></input>
           <button id="searchBtn">&#10132;</button>
         </form>
-        <img className="basketMenue" 
-        src={imagesPath+"icon/basket2.svg"}
-        alt="Shopping Bag Icon"
+        <img
+          className="loginMenue"
+          src={imagesPath + "icon/login.svg"}
+          onClick={UserSignOut}
+          alt="login icon"
+        ></img>
+        <img
+          className="basketMenue"
+          src={imagesPath + "icon/basket2.svg"}
+          alt="Shopping Bag Icon"
         ></img>
       </div>
-        </>
-    )
-}
+    </>
+  );
+};
 
-export default Header
+export default Header;

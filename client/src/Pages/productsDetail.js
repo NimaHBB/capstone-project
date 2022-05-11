@@ -1,12 +1,20 @@
-const ProductsDetails=()=>{
+import { useParams } from "react-router-dom";
+import { useState, useEffect } from "react";
+import CreateProductsDetails from "../components/functions/createProductDetails";
 
-    return(
-        <>
-        <main>
-        <p>DetailPgae</p>
-        </main>
-        </>
-    )
+const ProductsDetails = () => {
+  const { id } = useParams();
+  const [productDetail, setProductDetail] = useState({});
+  useEffect(() => {
+    fetch(`/api/product/${id}`)
+      .then((res) => res.json())
+      .then((data) => setProductDetail(data));
+  }, []);
 
-}
-export default ProductsDetails
+  return (
+    <div className="productsContainer">
+      <CreateProductsDetails productDetail={productDetail} />
+    </div>
+  );
+};
+export default ProductsDetails;

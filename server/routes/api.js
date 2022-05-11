@@ -9,6 +9,7 @@ const categorySchema = mongoose.Schema({
   imageUrl: { type: String, required: true },
 });
 const productsSchema = mongoose.Schema({
+  id: { type: Number, required: true },
   title: { type: String, required: true },
   mark: { type: String, require: false },
   description: { type: String, required: true },
@@ -34,11 +35,9 @@ router.get("/products", (req, res, next) => {
   });
 });
 
-router.get("/:id", (req, res, next) => {
-  const { id } = req.params;
-  res.status(200).json({
-    id: id,
-    name: "something",
+router.get("/product/:id", (req, res, next) => {
+  Products.findOne({ id: req.params.id }).then((prDetails) => {
+    res.status(200).json(prDetails);
   });
 });
 

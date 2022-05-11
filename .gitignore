@@ -4,4 +4,6 @@ package-lock.json
 .DS_Store
 **/node_modules
 client/node_modules/
-
+server/.env
+client/node_modules/.cache/
+node_modules

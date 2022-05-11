@@ -27,19 +27,28 @@
   color: #063773;
   padding-top: 5px;
 }
-.basketMenue{
-position: absolute;
-right: 10px;
-top: 10px;
-width: 20px;
-height: 25px;
-cursor: pointer;
+.basketMenue {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 20px;
+  height: 25px;
+  cursor: pointer;
+}
+.loginMenue {
+  position: absolute;
+  background: rgb(255, 255, 255, 90%);
+  left: 10px;
+  top: 10px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
 }
 form {
   position: relative;
   border: rgb(244, 244, 244, 0.5) 0.5px solid;
   width: 55%;
-  margin: 5px auto 10px auto;
+  margin: 5px auto 20px auto;
   transition: width 0.2s linear 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
   padding: 0 60px 0 5px;
 }
@@ -59,14 +68,14 @@ form {
   right: 0;
   top: 0;
   height: 100%;
-  border:none;
+  border: none;
   color: rgb(255, 255, 255);
   width: 30px;
   font-size: 1rem;
   background: #14a051;
   justify-content: center;
   text-align: center;
-  padding: 0 ;
+  padding: 0;
 }
 
 .search {
@@ -114,33 +123,39 @@ main {
   margin-bottom: 20px;
   background: transparent;
   width: 100%;
-  gap: 15px;
+  gap: 10px;
 }
-
+.NavLink {
+  text-decoration: none;
+  height: 100%;
+}
 .card {
   position: relative;
   padding: 5px;
-  width: 42%;
+  width: 44%;
   height: 200px;
   background: #fff;
   border-radius: 5px;
   border: none;
   box-shadow: rgb(207, 207, 207, 50%) 2px 2px 5px;
 }
-.card:hover{
+.card:hover {
   box-shadow: rgb(207, 207, 207, 74%) 0 2px 5px 4px;
   cursor: pointer;
 }
+
 .Favorite {
   position: absolute;
-  right: 15px;
-  bottom: 49px;
+  right: 0;
+  bottom: 15px;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  padding: 15px;
+}
+.Favorite img {
   width: 20px;
   height: 20px;
-  cursor: pointer;
-}
-.Favorite{
-  cursor: pointer;
 }
 h3 {
   text-align: center;
@@ -156,12 +171,16 @@ h3 {
   font-size: smaller;
 }
 
-.product_detail {
-  margin: 10px 0 5px 0;
+.product-detail {
+  position: absolute;
+  margin: 15px 0 5px 0;
+  bottom: 5px;
 }
-
+.product_title {
+  text-decoration: underline;
+}
 .imageContainer {
-  margin: auto;
+  margin: 5px auto auto auto;
   display: flex;
   justify-content: center;
   width: 90%;
@@ -172,7 +191,7 @@ h3 {
   max-width: 130px;
   max-height: 130px;
 }
-.product_detail p {
+.product-detail p {
   margin-top: 0;
   margin-bottom: 0;
   font-size: 0.8rem;
@@ -244,4 +263,14 @@ footer ul img {
 }
 .Home {
   border-bottom: 5px #063773 solid;
+}
+.accountRegisterP {
+  margin: 20px auto;
+  align-self: center;
+  font-size: 0.9rem;
+  color: #063773;
+}
+
+.DisplayNone {
+  display: none;
 }

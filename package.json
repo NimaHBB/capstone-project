@@ -18,6 +18,7 @@
     "@apideck/better-ajv-errors": "^0.3.3",
     "concurrently": "^7.1.0",
     "dotenv": "^16.0.0",
+    "firebase": "^9.8.1",
     "mongoose": "^6.3.1",
     "react-router-dom": "^6.3.0",
     "styled-components": "^5.3.5"

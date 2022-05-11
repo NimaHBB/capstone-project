@@ -1,13 +1,15 @@
-import react,{ useEffect, useState } from "react";
+import react, { useEffect, useState } from "react";
 import CreateCategoryCard from "../components/functions/cerateCategoryCard";
 import CreateProductsCard from "../components/functions/createProductsCard";
-const Home=()=>{
-    const imagesPath="https://nimahabibi.de/shop/image/"
 
-    const [categories, setCategories] = useState([]);
-    const [products, setProducts] = useState([]);
+const Home = () => {
+  const imagesPath = "https://nimahabibi.de/shop/image/";
 
-function ShowCategoryDetails(catName) {
+  const [categories, setCategories] = useState([]);
+  const [products, setProducts] = useState([]);
+  const [favouritesStatus, setFavouritesStatus] = useState([]);
+
+  function ShowCategoryDetails(catName) {
     alert(catName + " category clicked");
   }
 
@@ -27,39 +29,30 @@ function ShowCategoryDetails(catName) {
       });
   }, []);
 
-
-  const showProductDetailPage=()=>{
-    //document.getElementById('main').innerHTML=''
-  }
-
-
-    return(
-
-<div>
-<h3>Die besten Angebote</h3>
-        <div className="productsContainer">
-          {products.map((product, index) => (
-            <CreateProductsCard
-              key={index}
-              doClick={showProductDetailPage}
-              ProductObject={product}
-              imagesPath={imagesPath}
-            />
-          ))}
-        </div>
-        <h3>Sortiment</h3>
-        <div className="categoryContainer">
-          {categories.map((category, index) => (
-            <CreateCategoryCard
-              key={index}
-              doClick={ShowCategoryDetails}
-              catObject={category}
-              imagesPath={imagesPath}
-            />
-          ))}
-        </div>
-        </div>
-        
-        );
-}
-export default Home
+  return (
+    <div>
+      <h3>Die besten Angebote</h3>
+      <div className="productsContainer">
+        {products.map((product, index) => (
+          <CreateProductsCard
+            key={index}
+            ProductObject={product}
+            imagesPath={imagesPath}
+          />
+        ))}
+      </div>
+      <h3>Sortiment</h3>
+      <div className="categoryContainer">
+        {categories.map((category, index) => (
+          <CreateCategoryCard
+            key={index}
+            doClick={ShowCategoryDetails}
+            catObject={category}
+            imagesPath={imagesPath}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
+export default Home;
