@@ -1,7 +1,7 @@
 import { getAuth, signOut } from "firebase/auth";
 
 const UserSignOut = () => {
-  if (JSON.parse(localStorage.getItem("nittoUser")) !== "out") {
+  if (localStorage.getItem("nittoUser") !== "out") {
     localStorage.setItem("nittoUser", "out");
     const auth = getAuth();
     signOut(auth)

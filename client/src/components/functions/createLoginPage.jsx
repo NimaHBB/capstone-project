@@ -1,16 +1,13 @@
 import styled from "styled-components";
 import { useState } from "react";
-import {
-  getAuth,
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-} from "firebase/auth";
+import { app } from "./initializeFirebase";
+import {getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword} from "firebase/auth";
 
-const auth = getAuth();
+
 const CreateLoginPage = () => {
   let email = "";
   let password = "";
-
+  const auth = getAuth();
   const doLogin = () => {
     email = document.getElementById("email").value;
     password = document.getElementById("password").value;

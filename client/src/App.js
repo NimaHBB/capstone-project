@@ -9,7 +9,6 @@ import Login from "./Pages/login";
 const imagesPath = "https://nimahabibi.de/shop/image/";
 
 function App() {
-  
   console.clear();
 
   return (
@@ -26,4 +25,4 @@ function App() {
     </div>
   );
 }
-export default App
+export default App;
