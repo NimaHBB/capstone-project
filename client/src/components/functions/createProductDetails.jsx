@@ -1,6 +1,10 @@
 import styled from "styled-components";
+import React from "react";
 
 const CreateProductsDetails = ({ productDetail }) => {
+
+
+
   return (
     <ProductDetails>
       <ProductImage src={productDetail.image} alt="Sofa" />

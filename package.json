@@ -16,6 +16,7 @@
   "license": "ISC",
   "dependencies": {
     "@apideck/better-ajv-errors": "^0.3.3",
+    "@paypal/react-paypal-js": "^7.7.0",
     "concurrently": "^7.1.0",
     "dotenv": "^16.0.0",
     "firebase": "^9.8.1",

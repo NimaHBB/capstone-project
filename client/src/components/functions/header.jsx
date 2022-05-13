@@ -1,21 +1,31 @@
+import { useState,useEffect } from "react";
 import UserSignOut from "./userSignOut";
 
 const imagesPath = "https://nimahabibi.de/shop/image/";
 const Header = () => {
+  // const [searchText,setSearchText]=useState("")
+
+// const handleChange=(event)=>{
+// setSearchText(event.target.value);
+// }
+// useEffect(() => {
+//   console.log(searchText)
+// }, [searchText]);
   return (
+
     <>
       <div className="App-header">
         <h4>Feasy Shop</h4>
-        <form onSubmit={""}>
+        {/* <form onSubmit={e=>e.preventDefault()}>
           <input
             type="text"
             className="search"
             placeholder="search here..."
-            autofocus
-            required
+            value={searchText.value}
+            onChange={handleChange}
           ></input>
           <button id="searchBtn">&#10132;</button>
-        </form>
+        </form> */}
         <img
           className="loginMenue"
           src={imagesPath + "icon/login.svg"}
@@ -31,5 +41,4 @@ const Header = () => {
     </>
   );
 };
-
 export default Header;
