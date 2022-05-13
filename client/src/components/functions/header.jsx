@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <>
       <div className="App-header">
-        <h4>Nitto Shop</h4>
+        <h4>Feasy Shop</h4>
         <form onSubmit={""}>
           <input
             type="text"

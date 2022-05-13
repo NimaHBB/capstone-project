@@ -50,7 +50,7 @@ form {
   width: 55%;
   margin: 5px auto 20px auto;
   transition: width 0.2s linear 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
-  padding: 0 60px 0 5px;
+  padding: 0 0px 0 5px;
 }
 
 #searchBtn {

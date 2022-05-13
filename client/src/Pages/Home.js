@@ -25,10 +25,9 @@ const Home = () => {
     fetch("/api/products")
       .then((res) => res.json())
       .then((data) => {
-        setProducts(data);
+      setProducts(data);
       });
   }, []);
-
   return (
     <div>
       <h3>Die besten Angebote</h3>
