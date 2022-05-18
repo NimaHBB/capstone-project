@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { useState } from "react";
-import { appFirebase } from "./initializeFirebase";
+import {appFirebase} from "../../initializeFirebase";
 import {getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword,updateProfile} from "firebase/auth";
 
 

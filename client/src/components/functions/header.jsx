@@ -15,7 +15,7 @@ const Header = () => {
 
     <>
       <div className="App-header">
-        <h4>Feasy Shop</h4>
+        <h4>Nitto Shop</h4>
         {/* <form onSubmit={e=>e.preventDefault()}>
           <input
             type="text"

@@ -2,7 +2,6 @@ node_modules
 package-lock.json
 .prettierrc
 .DS_Store
-**/node_modules
 client/node_modules/
 server/.env
-initializeFirebase.jsx
+**/initializeFirebase.jsx

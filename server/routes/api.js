@@ -17,8 +17,29 @@ const productsSchema = mongoose.Schema({
   image: { type: String, required: true },
   rating: { type: Object, required: false },
 });
+
+const settingsSchema=mongoose.Schema({
+  APIKEY:{ type: String, required: true },
+  AUTHNAME:{ type: String, required: true },
+  DATABASEURL:{ type: String, required: true },
+  PROJECTID: { type: String, required: true },
+  STORAGEBUCKET: { type: String, required: true },
+  MESSAGINGSENDERID: { type: String, required: true },
+  APPID: { type: String, required: true },
+  MEASUREMENTID: { type: String, required: true },
+});
+
+const usersSchema=mongoose.Schema({
+  userID:{ type: String, required: true },
+  userFullName:{ type: String, required: true },
+  userEmail:{ type: String, required: true },
+  userMobile:{ type: String, required: true }
+})
+
 const Products = mongoose.model("products", productsSchema);
 const Product_Categories = mongoose.model("product_categories", categorySchema);
+const Settings = mongoose.model("settings", settingsSchema);
+const Users = mongoose.model("users", usersSchema);
 
 const { MONGODB_URL } = process.env;
 mongoose.connect(MONGODB_URL).then(() => {
@@ -38,6 +59,17 @@ router.get("/products", (req, res, next) => {
 router.get("/product/:id", (req, res, next) => {
   Products.findOne({ id: req.params.id }).then((prDetails) => {
     res.status(200).json(prDetails);
+  });
+});
+
+router.get("/settings", (req, res, next) => {
+  Settings.find({}).then((sett) => res.status(200).json(sett));
+});
+
+router.get("/users/:id", (req, res, next) => {
+  Users.findOne({ userID: req.params.id }).then((userDetails) => {
+    res.status(200).json(userDetails);
+    console.log(userDetails)
   });
 });
 

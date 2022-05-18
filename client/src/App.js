@@ -19,6 +19,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="product/:id" element={<ProductsDetails />} />
           <Route path="login" element={<Login />} />
+          <Route path="users/:id" element={<Login />} />
         </Routes>
       </main>
       <Footer className="footer" />
