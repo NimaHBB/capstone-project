@@ -8,9 +8,9 @@ const Home = () => {
   const [categories, setCategories] = useState([]);
   const [products, setProducts] = useState([]);
   const [favouritesStatus, setFavouritesStatus] = useState([]);
-  const [searchText,setSearchText]=useState("");
-  const [products_Object_Copy,set_Products_Object_Copy]=useState([]);
-
+  const [searchText, setSearchText] = useState("");
+  const [products_Object_Copy, set_Products_Object_Copy] = useState([]);
+  let favIcon = "https://nimahabibi.de/shop/image/icon/favorite-black.svg";
 
   function ShowCategoryDetails(catName) {
     alert(catName + " category clicked");
@@ -28,30 +28,49 @@ const Home = () => {
     fetch("/api/products")
       .then((res) => res.json())
       .then((data) => {
-      setProducts(data)
-      set_Products_Object_Copy(data)
+        setProducts(data);
+        set_Products_Object_Copy(data);
       });
   }, []);
 
-  
-  
-  const handleChange=(event)=>{
+  const handleChange = (event) => {
     setSearchText(event.target.value);
-    }
-    // let doSearchText="";
-    // useEffect(() => {
-    //   doSearchText=searchText
-    // }, [searchText]);
-const doSearch=()=>{
+  };
 
-  let searchResult=products_Object_Copy
-//  searchResult.filter((prod)=>prod.title.includes(searchText))
- setProducts(searchResult.filter((prod)=>prod.title.toLowerCase().includes(searchText.toLowerCase())))
-}
-  return (  
+  const doSearch = () => {
+    let searchResult = products_Object_Copy;
+    //  searchResult.filter((prod)=>prod.title.includes(searchText))
+    setProducts(
+      searchResult.filter((prod) =>
+        prod.title.toLowerCase().includes(searchText.toLowerCase())
+      )
+    );
+  };
+
+  const getFavIcon = (productID) => {
+    if (localStorage.getItem(productID) === null) {
+      localStorage.setItem(productID, "False");
+    }
+
+    if (localStorage.getItem(productID) == "False") {
+      favIcon = "https://nimahabibi.de/shop/image/icon/favorite-black.svg";
+    } else {
+      favIcon = "https://nimahabibi.de/shop/image/icon/favorited.svg";
+    }
+  };
+
+  const ToggleFavourites = (productID) => {
+    setFavouritesStatus([]);
+    if (localStorage.getItem(productID) == "False") {
+      localStorage.setItem(productID, "True");
+    } else {
+      localStorage.setItem(productID, "False");
+    }
+  };
+  return (
     <div>
       <div className="App-header">
-      <form onSubmit={e=>e.preventDefault()}>
+        <form onSubmit={(e) => e.preventDefault()}>
           <input
             type="text"
             className="search"
@@ -59,18 +78,27 @@ const doSearch=()=>{
             value={searchText.value}
             onChange={handleChange}
           ></input>
-          <button id="searchBtn" onClick={doSearch}>&#10132;</button>
+          <button id="searchBtn" onClick={doSearch}>
+            &#10132;
+          </button>
         </form>
-        </div>
+      </div>
       <h3>Die besten Angebote</h3>
       <div className="productsContainer">
-        {products.map((product, index) => (
-          <CreateProductsCard
-            key={index}
-            ProductObject={product}
-            imagesPath={imagesPath}
-          />
-        ))}
+        {products.map(
+          (product, index) => (
+            getFavIcon(product.id),
+            (
+              <CreateProductsCard
+                key={index}
+                ProductObject={product}
+                imagesPath={imagesPath}
+                toggleFav={() => ToggleFavourites(product.id)}
+                FavouriteIcon={favIcon}
+              />
+            )
+          )
+        )}
       </div>
       <h3>Sortiment</h3>
       <div className="categoryContainer">
