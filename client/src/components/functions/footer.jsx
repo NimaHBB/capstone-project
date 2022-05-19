@@ -10,11 +10,6 @@ const Footer = () => {
             <img src={imagesPath + "icon/home.svg"} alt="home icon" />
           </li>
         </NavLink>
-        <NavLink to="login">
-          <li>
-            <img src={imagesPath + "icon/person.svg"} alt="person icon" />
-          </li>
-        </NavLink>
         <NavLink to="favourites">
           <li>
             <img
@@ -23,11 +18,17 @@ const Footer = () => {
             />
           </li>
         </NavLink>
-        <NavLink to="product-detail">
+        <NavLink to="login">
+          <li>
+            <img src={imagesPath + "icon/person.svg"} alt="person icon" />
+          </li>
+        </NavLink>
+
+        {/* <NavLink to="product-detail">
           <li>
             <img src={imagesPath + "icon/menu.svg"} alt="menu icon" />
           </li>
-        </NavLink>
+        </NavLink> */}
       </ul>
     </footer>
   );
