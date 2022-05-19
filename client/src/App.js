@@ -18,10 +18,10 @@ function App() {
       <main id="main">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="product/:id" element={<ProductsDetails />} />
           <Route path="login" element={<Login />} />
           <Route path="favourites" element={<Favourites />} />
           <Route path="users/:id" element={<Login />} />
+          <Route path="product/:id" element={<ProductsDetails />} />
         </Routes>
       </main>
       <Footer className="footer" />
