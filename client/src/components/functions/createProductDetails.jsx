@@ -12,7 +12,7 @@ const CreateProductsDetails = ({ productDetail }) => {
         <Description>{productDetail.description}</Description>
       </ContentTextsDiv>
       <AddToBasketButton>Add to Basket</AddToBasketButton>
-      <AddRemoveFavourite src="https://nimahabibi.de/shop/image/icon/favorite-black.svg"></AddRemoveFavourite>
+      {/* <AddRemoveFavourite src="https://nimahabibi.de/shop/image/icon/favorite-black.svg"></AddRemoveFavourite> */}
     </ProductDetails>
   );
 };
