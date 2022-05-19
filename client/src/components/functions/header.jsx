@@ -1,18 +1,17 @@
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import UserSignOut from "./userSignOut";
 
 const imagesPath = "https://nimahabibi.de/shop/image/";
 const Header = () => {
   // const [searchText,setSearchText]=useState("")
 
-// const handleChange=(event)=>{
-// setSearchText(event.target.value);
-// }
-// useEffect(() => {
-//   console.log(searchText)
-// }, [searchText]);
+  // const handleChange=(event)=>{
+  // setSearchText(event.target.value);
+  // }
+  // useEffect(() => {
+  //   console.log(searchText)
+  // }, [searchText]);
   return (
-
     <>
       <div className="App-header">
         <h4>Nitto Shop</h4>

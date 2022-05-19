@@ -2,7 +2,13 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import ProductsDetails from "../../Pages/productsDetail";
 
-const CreateProductsCard = ({ ProductObject, imagesPath, doClick }) => {
+const CreateProductsCard = ({
+  ProductObject,
+  imagesPath,
+  doClick,
+  toggleFav,
+  FavouriteIcon,
+}) => {
   return (
     <div className="card">
       <div className="products">
@@ -24,9 +30,9 @@ const CreateProductsCard = ({ ProductObject, imagesPath, doClick }) => {
         </NavLink>
         <div className="Favorite">
           <img
-            src={imagesPath + "icon/favorite-black.svg"}
+            src={FavouriteIcon}
             alt="Favorite Icon"
-            onClick={() => alert("clicked")}
+            onClick={toggleFav}
           ></img>
         </div>
       </div>

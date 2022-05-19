@@ -18,10 +18,10 @@ const productsSchema = mongoose.Schema({
   rating: { type: Object, required: false },
 });
 
-const settingsSchema=mongoose.Schema({
-  APIKEY:{ type: String, required: true },
-  AUTHNAME:{ type: String, required: true },
-  DATABASEURL:{ type: String, required: true },
+const settingsSchema = mongoose.Schema({
+  APIKEY: { type: String, required: true },
+  AUTHNAME: { type: String, required: true },
+  DATABASEURL: { type: String, required: true },
   PROJECTID: { type: String, required: true },
   STORAGEBUCKET: { type: String, required: true },
   MESSAGINGSENDERID: { type: String, required: true },
@@ -29,12 +29,12 @@ const settingsSchema=mongoose.Schema({
   MEASUREMENTID: { type: String, required: true },
 });
 
-const usersSchema=mongoose.Schema({
-  userID:{ type: String, required: true },
-  userFullName:{ type: String, required: true },
-  userEmail:{ type: String, required: true },
-  userMobile:{ type: String, required: true }
-})
+const usersSchema = mongoose.Schema({
+  userID: { type: String, required: true },
+  userFullName: { type: String, required: true },
+  userEmail: { type: String, required: true },
+  userMobile: { type: String, required: true },
+});
 
 const Products = mongoose.model("products", productsSchema);
 const Product_Categories = mongoose.model("product_categories", categorySchema);
@@ -69,7 +69,7 @@ router.get("/settings", (req, res, next) => {
 router.get("/users/:id", (req, res, next) => {
   Users.findOne({ userID: req.params.id }).then((userDetails) => {
     res.status(200).json(userDetails);
-    console.log(userDetails)
+    console.log(userDetails);
   });
 });
 
