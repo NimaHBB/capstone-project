@@ -5,6 +5,7 @@ import Home from "./Pages/Home";
 import ProductsDetails from "./Pages/productsDetail";
 import Header from "./components/functions/header";
 import Login from "./Pages/login";
+import Favourites from "./Pages/Favourites";
 
 const imagesPath = "https://nimahabibi.de/shop/image/";
 
@@ -19,6 +20,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="product/:id" element={<ProductsDetails />} />
           <Route path="login" element={<Login />} />
+          <Route path="favourites" element={<Favourites />} />
           <Route path="users/:id" element={<Login />} />
         </Routes>
       </main>

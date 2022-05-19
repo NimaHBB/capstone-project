@@ -95,7 +95,7 @@ const CreateLoginPage = () => {
           rel="stylesheet"
         ></link>
       </head>
-      <LoginFormDiv className="LoginForm">
+      <LoginFormDiv className="LoginForm" autoComplete="false">
         <Label>Login here to access your Profile</Label>
         <UsernameTextBox
           id="email"

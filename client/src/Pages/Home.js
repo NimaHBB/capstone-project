@@ -60,12 +60,13 @@ const Home = () => {
   };
 
   const ToggleFavourites = (productID) => {
-    setFavouritesStatus([]);
     if (localStorage.getItem(productID) == "False") {
       localStorage.setItem(productID, "True");
     } else {
       localStorage.setItem(productID, "False");
     }
+    setFavouritesStatus([]);
+
   };
   return (
     <div>

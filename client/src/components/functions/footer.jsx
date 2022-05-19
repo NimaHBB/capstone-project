@@ -15,7 +15,7 @@ const Footer = () => {
             <img src={imagesPath + "icon/person.svg"} alt="person icon" />
           </li>
         </NavLink>
-        <NavLink to="product-detail">
+        <NavLink to="favourites">
           <li>
             <img
               src={imagesPath + "icon/favorite_menue.svg"}
