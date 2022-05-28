@@ -1,10 +1,26 @@
 import styled from "styled-components";
 import React from "react";
+import { useState,useEffect } from "react";
 
-const CreateProductsDetails = ({ productDetail }) => {
+
+const CreateProductsDetails = ({ productDetail,images }) => {
+  const [currentImage,setCurrentImage]=useState(0)
+  
+  const imagesCount=images.length
+
+  const nextImage=()=>{
+   currentImage<imagesCount-1 ? setCurrentImage(currentImage+1):setCurrentImage(imagesCount-1)
+    console.log(currentImage)
+  }
+  
+  const prevImage=()=>{
+    currentImage>0 ? setCurrentImage(currentImage-1):setCurrentImage(0);
+   }
   return (
     <ProductDetails>
-      <ProductImage src={productDetail.image} alt="Sofa" />
+      <ProductImage src={images[currentImage]} alt="Sofa" />
+      <Next onClick={nextImage}>&#8250;</Next>
+      <Prev onClick={prevImage}>&#8249;</Prev>
       <ContentTextsDiv>
         <Title>{productDetail.title}</Title>
 
@@ -19,6 +35,7 @@ const CreateProductsDetails = ({ productDetail }) => {
 export default CreateProductsDetails;
 
 const ProductDetails = styled.div`
+position:relative;
   display: flex;
   flex-direction: column;
   width: 90%;
@@ -79,4 +96,21 @@ const AddRemoveFavourite = styled.img`
   &:hover {
     border: 1.5px solid rgb(2, 113, 194);
   }
+`;
+
+const Next=styled.p`
+font-size:10rem;
+position:absolute;
+right:1px;
+top:1px;
+color:grey;
+cursor:pointer;
+`;
+const Prev=styled.p`
+font-size:10rem;
+position:absolute;
+left:1px;
+top:1px;
+color:grey;
+cursor:pointer;
 `;

@@ -10,6 +10,7 @@ const Home = () => {
   const [favouritesStatus, setFavouritesStatus] = useState([]);
   const [searchText, setSearchText] = useState("");
   const [products_Object_Copy, set_Products_Object_Copy] = useState([]);
+  const [sliceToShow,setSliceToShow]=useState(2)
   let favIcon = "https://nimahabibi.de/shop/image/icon/favorite-black.svg";
 
   function ShowCategoryDetails(catName) {
@@ -37,6 +38,9 @@ const Home = () => {
     setSearchText(event.target.value);
   };
 
+  const ShowMore=()=>{
+    setSliceToShow(sliceToShow+2)
+  }
   const doSearch = () => {
     let searchResult = products_Object_Copy;
     //  searchResult.filter((prod)=>prod.title.includes(searchText))
@@ -86,7 +90,7 @@ const Home = () => {
       </div>
       <h3>Die besten Angebote</h3>
       <div className="productsContainer">
-        {products.map(
+        {products.slice(0,sliceToShow).map(
           (product, index) => (
             getFavIcon(product.id),
             (
@@ -101,6 +105,7 @@ const Home = () => {
           )
         )}
       </div>
+      <button onClick={ShowMore}>Show More</button>
       <h3>Sortiment</h3>
       <div className="categoryContainer">
         {categories.map((category, index) => (
