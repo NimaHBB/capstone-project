@@ -40,6 +40,12 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+<<<<<<< HEAD
   }
    , "proxy": "http://localhost:5005"
  }
+=======
+  },
+  "proxy": "http://149.233.204.52:3000"
+}
+>>>>>>> 8c2cd01d735a9914cc53e1a65a686260579fecf6
