@@ -1,16 +1,14 @@
 {
   "name": "client",
   "version": "0.1.0",
-  "private": true,
+  "proxy": "http://localhost:5005",
   "dependencies": {
-    "@paypal/react-paypal-js": "^7.7.0",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.1.1",
     "@testing-library/user-event": "^13.5.0",
     "dotenv": "^16.0.1",
     "firebase": "^9.8.1",
-    "http-proxy-middleware": "^2.0.6",
-    "react": "^18.0.0",
+    "react": "^18.1.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
@@ -40,12 +38,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-<<<<<<< HEAD
   }
-   , "proxy": "http://localhost:5005"
- }
-=======
-  },
-  "proxy": "http://149.233.204.52:3000"
 }
->>>>>>> 8c2cd01d735a9914cc53e1a65a686260579fecf6
