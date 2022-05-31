@@ -1,7 +1,7 @@
-import react, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import CreateCategoryCard from "../components/functions/cerateCategoryCard";
 import CreateProductsCard from "../components/functions/createProductsCard";
-
+import ButtonBlue from "../components/css/styledButtonBlue";
 const Home = () => {
   const imagesPath = "https://nimahabibi.de/shop/image/";
 
@@ -10,7 +10,8 @@ const Home = () => {
   const [favouritesStatus, setFavouritesStatus] = useState([]);
   const [searchText, setSearchText] = useState("");
   const [products_Object_Copy, set_Products_Object_Copy] = useState([]);
-  const [sliceToShow,setSliceToShow]=useState(2)
+  const ShowMoreAmount = 6;
+  const [sliceToShow, setSliceToShow] = useState(ShowMoreAmount);
   let favIcon = "https://nimahabibi.de/shop/image/icon/favorite-black.svg";
 
   function ShowCategoryDetails(catName) {
@@ -38,9 +39,9 @@ const Home = () => {
     setSearchText(event.target.value);
   };
 
-  const ShowMore=()=>{
-    setSliceToShow(sliceToShow+2)
-  }
+  const ShowMore = () => {
+    setSliceToShow(sliceToShow + ShowMoreAmount);
+  };
   const doSearch = () => {
     let searchResult = products_Object_Copy;
     //  searchResult.filter((prod)=>prod.title.includes(searchText))
@@ -56,7 +57,7 @@ const Home = () => {
       localStorage.setItem(productID, "False");
     }
 
-    if (localStorage.getItem(productID) == "False") {
+    if (localStorage.getItem(productID) === "False") {
       favIcon = "https://nimahabibi.de/shop/image/icon/favorite-black.svg";
     } else {
       favIcon = "https://nimahabibi.de/shop/image/icon/favorited.svg";
@@ -64,13 +65,12 @@ const Home = () => {
   };
 
   const ToggleFavourites = (productID) => {
-    if (localStorage.getItem(productID) == "False") {
+    if (localStorage.getItem(productID) === "False") {
       localStorage.setItem(productID, "True");
     } else {
       localStorage.setItem(productID, "False");
     }
     setFavouritesStatus([]);
-
   };
   return (
     <div>
@@ -90,22 +90,27 @@ const Home = () => {
       </div>
       <h3>Die besten Angebote</h3>
       <div className="productsContainer">
-        {products.slice(0,sliceToShow).map(
-          (product, index) => (
-            getFavIcon(product.id),
-            (
-              <CreateProductsCard
-                key={index}
-                ProductObject={product}
-                imagesPath={imagesPath}
-                toggleFav={() => ToggleFavourites(product.id)}
-                FavouriteIcon={favIcon}
-              />
+        {products
+          .slice(0, sliceToShow)
+          .map(
+            (product, index) => (
+              getFavIcon(product.id),
+              (
+                <CreateProductsCard
+                  key={index}
+                  ProductObject={product}
+                  imagesPath={imagesPath}
+                  toggleFav={() => ToggleFavourites(product.id)}
+                  FavouriteIcon={favIcon}
+                />
+              )
             )
-          )
-        )}
+          )}
       </div>
-      <button onClick={ShowMore}>Show More</button>
+      <div className="show-more-container">
+        <ButtonBlue onClick={ShowMore}>Show More</ButtonBlue>
+      </div>
+
       <h3>Sortiment</h3>
       <div className="categoryContainer">
         {categories.map((category, index) => (

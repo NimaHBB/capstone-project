@@ -113,6 +113,7 @@ form {
 }
 main {
   min-height: 91vh;
+  justify-content: center;
 }
 .productsContainer {
   display: flex;
@@ -142,6 +143,11 @@ main {
 .card:hover {
   box-shadow: rgb(207, 207, 207, 74%) 0 2px 5px 4px;
   cursor: pointer;
+}
+
+.show-more-container {
+  display: flex;
+  justify-content: center;
 }
 
 .Favorite {
