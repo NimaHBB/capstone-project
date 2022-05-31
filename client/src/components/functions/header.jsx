@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import UserSignOut from "./userSignOut";
 
 const imagesPath = "https://nimahabibi.de/shop/image/";

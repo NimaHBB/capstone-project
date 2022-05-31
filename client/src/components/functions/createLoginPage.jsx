@@ -70,8 +70,7 @@ const CreateLoginPage = () => {
       })
       .catch((error) => {
         const errorCode = error.code;
-        const errorMessage = error.message;
-        errorCode == "auth/email-already-in-use"
+        errorCode === "auth/email-already-in-use"
           ? setAppMessage("this email is registered before!")
           : setAppMessage(errorCode);
         setMessageDisplay("block");
@@ -115,7 +114,7 @@ const CreateLoginPage = () => {
         </ButtonRegister>
         <p className="accountRegisterP">
           Not registered yet? ,{" "}
-          <a href="" onClick={ToggleLoginRegister}>
+          <a href="#" onClick={ToggleLoginRegister}>
             Click Here
           </a>{" "}
           to create your account
@@ -188,7 +187,7 @@ const MessageBox = styled.div`
 `;
 
 const Message = styled.p`
-  color: ${(props) => (props.msgType == "error" ? "red" : "green")};
+  color: ${(props) => (props.msgType === "error" ? "red" : "green")};
   font-size: 1rem;
   font-weight: 500;
   text-align: center;

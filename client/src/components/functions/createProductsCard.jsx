@@ -1,14 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import ProductsDetails from "../../Pages/productsDetail";
 
-const CreateProductsCard = ({
-  ProductObject,
-  imagesPath,
-  doClick,
-  toggleFav,
-  FavouriteIcon,
-}) => {
+const CreateProductsCard = ({ ProductObject, toggleFav, FavouriteIcon }) => {
   return (
     <div className="card">
       <div className="products">
