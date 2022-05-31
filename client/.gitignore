@@ -7,7 +7,7 @@ yarn-error.log*
 firebase-debug.log*
 firebase-debug.*.log*
 src/initializeFirebase.jsx
-node_modules/.cache/
+node_modules
 # Firebase cache
 .firebase/
 
