@@ -3,4 +3,5 @@ package-lock.json
 .prettierrc
 .DS_Store
 server/.env
+client/node_modules
 **/initializeFirebase.jsx
