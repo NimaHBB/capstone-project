@@ -22,5 +22,5 @@
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff",
-  "proxy": "http://195.123.97.252:5005"
+  "proxy": "https://servernitto.herokuapp.com/"
 }
