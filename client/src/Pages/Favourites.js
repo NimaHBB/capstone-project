@@ -10,7 +10,7 @@ const Favourites = () => {
   let favIcon = "https://nimahabibi.de/shop/image/icon/favorite-black.svg";
 
   useEffect(() => {
-    fetch("/api/products")
+    fetch("https://servernitto.herokuapp.com/api/products")
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);
@@ -32,7 +32,7 @@ const Favourites = () => {
     );
   };
 
-  let isFav=false;
+  let isFav = false;
   const getFavIcon = (productID) => {
     if (localStorage.getItem(productID) === null) {
       localStorage.setItem(productID, "False");
@@ -40,10 +40,10 @@ const Favourites = () => {
 
     if (localStorage.getItem(productID) == "False") {
       favIcon = "https://nimahabibi.de/shop/image/icon/favorite-black.svg";
-      isFav=false
+      isFav = false;
     } else {
       favIcon = "https://nimahabibi.de/shop/image/icon/favorited.svg";
-      isFav=true
+      isFav = true;
     }
   };
 
@@ -54,7 +54,6 @@ const Favourites = () => {
       localStorage.setItem(productID, "False");
     }
     setFavouritesStatus([]);
-
   };
   return (
     <div>
