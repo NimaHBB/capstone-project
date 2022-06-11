@@ -10,7 +10,7 @@ const Favourites = () => {
   let favIcon = "https://nimahabibi.de/shop/image/icon/favorite-black.svg";
 
   useEffect(() => {
-    fetch("https://servernitto.herokuapp.com/api/products")
+    fetch("/api/products")
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);

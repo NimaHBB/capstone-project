@@ -6,6 +6,7 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   updateProfile,
+  sendEmailVerification,
 } from "firebase/auth";
 
 const CreateLoginPage = () => {
@@ -16,7 +17,7 @@ const CreateLoginPage = () => {
   const [messageDisplay, setMessageDisplay] = useState("none");
   const [messageType, setMessageType] = useState("error");
 
-  const auth = getAuth();
+  let auth = getAuth();
   const doLogin = () => {
     email = document.getElementById("email").value;
     password = document.getElementById("password").value;
@@ -66,6 +67,9 @@ const CreateLoginPage = () => {
         setAppMessage("user created with this informations: " + user.email);
         setMessageDisplay("block");
         setMessageType("info");
+
+        auth = getAuth();
+        sendEmailVerification(auth.currentUser);
         // ...
       })
       .catch((error) => {

@@ -10,37 +10,38 @@ const CreateFavourites = ({
   FavouriteIcon,
   isFav,
 }) => {
-if(isFav) { return (
-    <div className="card">
-      <div className="products">
-        <NavLink to={`product/${ProductObject.id}`} className="NavLink">
-          <div className="imageContainer">
+  if (isFav) {
+    return (
+      <div className="card">
+        <div className="products">
+          <NavLink to={`product/${ProductObject.id}`} className="NavLink">
+            <div className="imageContainer">
+              <img
+                className="ProductImage"
+                src={ProductObject.image}
+                alt="Product's image"
+              />
+            </div>
+            <div className="product-detail">
+              <p className="Price">{ProductObject.price + " €"}</p>
+              <p>{ProductObject.mark}</p>
+              <p className="product_title">
+                {ProductObject.title.substring(0, 20) + "..."}
+              </p>
+            </div>
+          </NavLink>
+          <div className="Favorite">
             <img
-              className="ProductImage"
-              src={ProductObject.image}
-              alt="Product's image"
-            />
+              src={FavouriteIcon}
+              alt="Favorite Icon"
+              onClick={toggleFav}
+            ></img>
           </div>
-          <div className="product-detail">
-            <p className="Price">{ProductObject.price + " €"}</p>
-            <p>{ProductObject.mark}</p>
-            <p className="product_title">
-              {ProductObject.title.substring(0, 20) + "..."}
-            </p>
-          </div>
-        </NavLink>
-        <div className="Favorite">
-          <img
-            src={FavouriteIcon}
-            alt="Favorite Icon"
-            onClick={toggleFav}
-          ></img>
         </div>
       </div>
-    </div>
-  )}
-  else{
-    return <></>
+    );
+  } else {
+    return <></>;
   }
 };
 

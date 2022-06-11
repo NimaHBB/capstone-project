@@ -19,7 +19,7 @@ const Home = () => {
   }
 
   useEffect(() => {
-    fetch("./api")
+    fetch("/api")
       .then((res) => res.json())
       .then((data) => {
         setCategories(data);
@@ -27,7 +27,7 @@ const Home = () => {
   }, []);
 
   useEffect(() => {
-    fetch("./api/products")
+    fetch("/api/products")
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);

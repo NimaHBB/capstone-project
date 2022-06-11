@@ -1,4 +1,7 @@
+import { useState, useEffect } from "react";
 import UserSignOut from "./userSignOut";
+import { getAuth } from "firebase/auth";
+import login from "../../images/icon/login.svg";
 
 const imagesPath = "https://nimahabibi.de/shop/image/";
 const Header = () => {
@@ -10,6 +13,18 @@ const Header = () => {
   // useEffect(() => {
   //   console.log(searchText)
   // }, [searchText]);
+
+  const [isLogedIn, setIsLogedIn] = useState(false);
+  useEffect(() => {
+    const auth = getAuth();
+    const user = auth.currentUser;
+    if (user) {
+      setIsLogedIn(true);
+    } else {
+      setIsLogedIn(false);
+    }
+  }, []);
+
   return (
     <>
       <div className="App-header">
@@ -26,7 +41,7 @@ const Header = () => {
         </form> */}
         <img
           className="loginMenue"
-          src={imagesPath + "icon/login.svg"}
+          src={login}
           onClick={UserSignOut}
           alt="login icon"
         ></img>
