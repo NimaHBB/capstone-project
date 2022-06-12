@@ -1,5 +1,7 @@
 import react, { useEffect, useState } from "react";
 import CreateFavourites from "../components/functions/createFavourites";
+import favorited from "../images/icon/favorited.svg";
+import unfavorited from "../images/icon/favorite-black.svg";
 
 const Favourites = () => {
   const imagesPath = "https://nimahabibi.de/shop/image/";
@@ -7,7 +9,8 @@ const Favourites = () => {
   const [favouritesStatus, setFavouritesStatus] = useState([]);
   const [searchText, setSearchText] = useState("");
   const [products_Object_Copy, set_Products_Object_Copy] = useState([]);
-  let favIcon = "https://nimahabibi.de/shop/image/icon/favorite-black.svg";
+
+  let favIcon = "";
 
   useEffect(() => {
     fetch("/api/products")
@@ -39,10 +42,10 @@ const Favourites = () => {
     }
 
     if (localStorage.getItem(productID) == "False") {
-      favIcon = "https://nimahabibi.de/shop/image/icon/favorite-black.svg";
+      favIcon = unfavorited;
       isFav = false;
     } else {
-      favIcon = "https://nimahabibi.de/shop/image/icon/favorited.svg";
+      favIcon = favorited;
       isFav = true;
     }
   };
