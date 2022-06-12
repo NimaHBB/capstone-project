@@ -2,8 +2,11 @@ import { useEffect, useState } from "react";
 import CreateCategoryCard from "../components/functions/cerateCategoryCard";
 import CreateProductsCard from "../components/functions/createProductsCard";
 import ButtonBlue from "../components/css/styledButtonBlue";
+import favorited from "../images/icon/favorited.svg";
+import unfavorited from "../images/icon/favorite-black.svg";
+
 const Home = () => {
-  const imagesPath = "https://nimahabibi.de/shop/image/";
+  const imagesPath = "";
 
   const [categories, setCategories] = useState([]);
   const [products, setProducts] = useState([]);
@@ -12,7 +15,7 @@ const Home = () => {
   const [products_Object_Copy, set_Products_Object_Copy] = useState([]);
   const ShowMoreAmount = 6;
   const [sliceToShow, setSliceToShow] = useState(ShowMoreAmount);
-  let favIcon = "https://nimahabibi.de/shop/image/icon/favorite-black.svg";
+  let favIcon = "";
 
   function ShowCategoryDetails(catName) {
     alert(catName + " category clicked");
@@ -58,9 +61,9 @@ const Home = () => {
     }
 
     if (localStorage.getItem(productID) === "False") {
-      favIcon = "https://nimahabibi.de/shop/image/icon/favorite-black.svg";
+      favIcon = unfavorited;
     } else {
-      favIcon = "https://nimahabibi.de/shop/image/icon/favorited.svg";
+      favIcon = favorited;
     }
   };
 
@@ -99,7 +102,6 @@ const Home = () => {
                 <CreateProductsCard
                   key={index}
                   ProductObject={product}
-                  imagesPath={imagesPath}
                   toggleFav={() => ToggleFavourites(product.id)}
                   FavouriteIcon={favIcon}
                 />

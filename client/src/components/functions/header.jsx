@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import UserSignOut from "./userSignOut";
 import { getAuth } from "firebase/auth";
 import login from "../../images/icon/login.svg";
+import basket from "../../images/icon/basket2.svg";
 
 const imagesPath = "https://nimahabibi.de/shop/image/";
 const Header = () => {
@@ -45,11 +46,7 @@ const Header = () => {
           onClick={UserSignOut}
           alt="login icon"
         ></img>
-        <img
-          className="basketMenue"
-          src={imagesPath + "icon/basket2.svg"}
-          alt="Shopping Bag Icon"
-        ></img>
+        <img className="basketMenue" src={basket} alt="Shopping Bag Icon"></img>
       </div>
     </>
   );

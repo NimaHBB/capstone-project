@@ -1,14 +1,37 @@
 {
   "files": {
     "main.css": "/static/css/main.82e7b6f5.css",
-    "main.js": "/static/js/main.c51eba22.js",
+    "main.js": "/static/js/main.c4186e9d.js",
+    "static/media/drilling-machine.png": "/static/media/drilling-machine.d83f4c379a9fd6a5b8d7.png",
+    "static/media/sport.png": "/static/media/sport.4d2fd0226be26b0c9fcc.png",
+    "static/media/basket2.svg": "/static/media/basket2.8492c9d53ce8104fedce763bcfe3e975.svg",
+    "static/media/favorite.svg": "/static/media/favorite.f8a9ae951d8735c50bee.svg",
+    "static/media/settings.svg": "/static/media/settings.2627fba0bc30c656f0e0.svg",
+    "static/media/favorited.svg": "/static/media/favorited.ebaa8576dd6aa5d3e678859bd18d8f9c.svg",
+    "static/media/search.svg": "/static/media/search.e96e93b28209c35463d3.svg",
+    "static/media/person.svg": "/static/media/person.d93fac6945f2affd810cf98ef31f0f33.svg",
+    "static/media/shopping_cart.svg": "/static/media/shopping_cart.5dc21c56057c1a3a1bb3.svg",
+    "static/media/favorite-black.svg": "/static/media/favorite-black.e8c75e6d7f5141d8a78696eb13ad9da0.svg",
+    "static/media/shopping_bag.svg": "/static/media/shopping_bag.cd2b49ef5499fd3da4ff.svg",
+    "static/media/favorite_menue.svg": "/static/media/favorite_menue.dacd13dc37e1ce65fd8593d432759721.svg",
+    "static/media/add_shopping.svg": "/static/media/add_shopping.9c202d5f61ae2bfb1e4b.svg",
+    "static/media/add_circle.svg": "/static/media/add_circle.4a7bccde8ffd5ffcc46a.svg",
+    "static/media/basket.svg": "/static/media/basket.c0d008111817a0f519ac.svg",
     "index.html": "/index.html",
+    "static/media/delete.svg": "/static/media/delete.2b385a415776d1fe3a5e.svg",
+    "static/media/upload.svg": "/static/media/upload.e8a834be463bf8b16616.svg",
     "static/media/login.svg": "/static/media/login.c71e6ec9a5a7fd27108c9d87c534c292.svg",
+    "static/media/logout.svg": "/static/media/logout.f8ee41e2beabfe99659d.svg",
+    "static/media/home.svg": "/static/media/home.67e6fb47db378a697d162bdcfa9b75f9.svg",
+    "static/media/star.svg": "/static/media/star.844fdbea05b605ceebb3.svg",
+    "static/media/done.svg": "/static/media/done.983207f640fb42a9d859.svg",
+    "static/media/back.svg": "/static/media/back.b9b1b1b9f53a15c0c8d8.svg",
+    "static/media/menu.svg": "/static/media/menu.4e2c9a134d764c0196df.svg",
     "main.82e7b6f5.css.map": "/static/css/main.82e7b6f5.css.map",
-    "main.c51eba22.js.map": "/static/js/main.c51eba22.js.map"
+    "main.c4186e9d.js.map": "/static/js/main.c4186e9d.js.map"
   },
   "entrypoints": [
     "static/css/main.82e7b6f5.css",
-    "static/js/main.c51eba22.js"
+    "static/js/main.c4186e9d.js"
   ]
 }

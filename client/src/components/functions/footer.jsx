@@ -1,4 +1,7 @@
 import { NavLink } from "react-router-dom";
+import homeIcon from "../../images/icon/home.svg";
+import favorite_menue from "../../images/icon/favorite_menue.svg";
+import personIcon from "../../images/icon/person.svg";
 
 const Footer = () => {
   const imagesPath = "https://nimahabibi.de/shop/image/";
@@ -7,20 +10,17 @@ const Footer = () => {
       <ul>
         <NavLink to="/">
           <li className="Home">
-            <img src={imagesPath + "icon/home.svg"} alt="home icon" />
+            <img src={homeIcon} alt="home icon" />
           </li>
         </NavLink>
         <NavLink to="favourites">
           <li>
-            <img
-              src={imagesPath + "icon/favorite_menue.svg"}
-              alt="favorite icon"
-            />
+            <img src={favorite_menue} alt="favorite icon" />
           </li>
         </NavLink>
         <NavLink to="login">
           <li>
-            <img src={imagesPath + "icon/person.svg"} alt="person icon" />
+            <img src={personIcon} alt="person icon" />
           </li>
         </NavLink>
 
